@@ -5,9 +5,9 @@
 \usepackage{xcolor}
 \usepackage{amssymb}
 \usepackage{hyperref}
-\title{NIPS 2018 Competition proposal:}
-\author{Organizer1\thanks{The Leader organizer should be the first author of the proposal.} \and Organizer2 \and Organizer2 \and ... \and Organizern \\ \and
-{\tt contact-email@somewhere.org}\\
+\title{NIPS 2018 Competition proposal: Racial and Gender Bias in Face-based Attributes Analysis}
+\author{Esube Bekele\thanks{The Leader organizer should be the first author of the proposal.} \and Timnit Gebru \and Joy Buolamwini \and Wallace Lawson \and Ian Goodfellow \\ \and
+{\tt esube.bekele.ctr@nrl.navy.mil}\\
 }
 \date{\today}
 
@@ -15,21 +15,31 @@
 \maketitle
 
 \subsection{Overview of the competition}
-Summarize the background, available data, methods, available baseline, potential impact.
-
+% Summarize the background, available data, methods, available baseline, potential impact.
+% Background and impact review
+Despite recent success of face recognition and facial attributes  analysis systems, research suggests existence of a wide range of unintentional biases toward a specific racial or gender group \cite{phillips2011other} \cite{klare2012face}. 
+% Availbale data review
+Recent study of effect of demographics on facial gender classification showed this bias on three commercially available gender classification systems \cite{buolamwini2018gender}. As part of eliciting these biases, a new dataset was collected that is balanced in gender and skin tone type called Pilot Parliaments Benchmark (PPB). We will primarily use this benchmark dataset as it is labeled with 
+% Methods and available baseline for each track
+The competition will have two separate tracks. In the first track, researchers will be generating samples from existing datasets to illustrate such racial and gender biases in existing facial attributes analysis commercial systems and methods. In the second track, we will provide imbalanced dataset for race and gender and researchers will submit solutions that learn the facial attribute while minimizing the gender and racial bias in the classification performance.
 
 \subsection{Keywords}
 Competition keywords, up to five, from generic to specific.
 
-\subsection{Novelty (Have you heard about similar competitions in the past? If yes, describe the key differences. O/w disregard)}
-
-Indicate whether this is a completely new competition, a competition part of a series, eventually re-using old data.
+\subsection{Novelty}
+% (Have you heard about similar competitions in the past? If yes, describe the key differences. O/w disregard)
+%Indicate whether this is a completely new competition, a competition part of a series, eventually re-using old data.
+To the best of our knowledge this will be the first time such competition that is targeted at eliciting racial and gender biases in face recognition and analysis systems and solving these biases using techniques other than simply balancing the training dataset. Balancing datasets for every demographic group and gender is usually impractical for commercial applications with consequential impact such as surveillance and law enforcement profiling.
 
 \section{Competition description}
 
 \subsection{Background and impact}
 
-Provide some background on the problem approached by the competition and fields of research involved. Describe the scope and indicate the anticipated impact of the competition prepared (economical, humanitarian, societal, etc.). Justify the relevance of the problem to the targeted NIPS community and indicate whether it is of interest to a large audience or limited to a small number of domain experts (estimate the number of participants). A good consequence for a competition is to learn something new by answering a scientific question or make a significant technical advance.
+% Provide some background on the problem approached by the competition and fields of research involved. Describe the scope and indicate the anticipated impact of the competition prepared (economical, humanitarian, societal, etc.). Justify the relevance of the problem to the targeted NIPS community and indicate whether it is of interest to a large audience or limited to a small number of domain experts (estimate the number of participants). A good consequence for a competition is to learn something new by answering a scientific question or make a significant technical advance.
+% Expanded Background
+Psychologically, this is a well documented phenomenon called "own-race" or "other-race" bias that people recognize faces and face related attributes of their own race better than that of other races \cite{furl2002face}. These inherent biases affect manifests itself in face recognition and analysis systems primarily due to the unintentional imbalance in the datasets used to train such systems. The first breakdown of facial analysis systems performance by demographic groups\cite{phillips2011other} showed that these biases are
+
+% Expanded impact
 
 \subsection{Data}
 
