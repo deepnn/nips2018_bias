@@ -143,6 +143,50 @@ In both tracks of the competition, participants are required to submit their cod
 %Will there be several phases? Will you use a competition platform with on-line submissions and a leader board? Indicate means of preventing cheating.
 %Provide your plan to organize beta tests of your protocol and/or platform.
 
+Each track of the competition will have preliminary rounds of up to 5 submissions maximum and a final round submission. The preliminary rounds are for the purpose of giving participants feedback other than their local internal validation using the preliminary test sets released together with the development kit. The final round will be scored on the private test set and only this final round of submissions are considered for ranking teams. 
+
+We plan to apply for hosting research based competition with kaggle.com. It has self contained on-line submission and leader boards.
+
+\subsubsection{Preliminary Rounds}
+
+For the commercial face-based gender recognition systems evaluation track, we will release 634 random images from the PPB split by countries for internal cross validation and preliminary rounds submissions. The protocol for the preliminary rounds of this track are as follows.
+
+\begin{enumerate}
+    \item Participants are expected to generate a new sample for each of the 634 images in the development kit and submit the generated image. Participants are allowed to use their own image manipulation models or traditional pipeline. But, no commercial software is allowed.
+    \item Organizers will only score the newly generated images on the three commercial face-based gender recognition systems and performance metrics for each vendor and average performance metrics will be released for the participants. At this stage, organizers will not check for cheating.
+\end{enumerate}
+
+For the face-based gender recognition challenge, participants will follow the following protocols.
+
+\begin{enumerate}
+    \item Organizers will release 636 random images from the PPB evaluation benchmark as part of the development kit.
+    \item Participants are expected to train their face-based gender recognition models on CelebA dataset. The aligned and cropped versions of the CelebA dataset together with 40 attributes (gender is one of these attributes) will be made available both on the competition site and kaggle.com. Submissions are encouraged that exploit and submit predictions of attributes of CelebA other than gender to help in balanced gender recognition in a multi-label classification. But, only the gender prediction will be used to score submissions.
+    \item Organizers will score the submissions on the 636 preliminary round test sets and release the gender recognition performance to participants (in the form of public leader board).
+\end{enumerate}
+
+\subsubsection{Final Rounds}
+For the final round we will set aside 1000 images and their skin type and gender labels for scoring the final submissions. To prevent cheating in this final round, the following protocols are followed:
+
+\begin{itemize}
+    \item The labels for the final round images are held confidentially and will not be made available until the competition ends and winners are announced. The images will be released 
+    \item All participants will have to submit their code or open source it on github and submit a link to it to be considered for the top 3 positions. Submissions without source code in the final round will not be scored.
+    \item For the first track of this competition, organizers will make at most care to run the code and generate new samples for the 1000 final test images. Special care will be taken for the top 3 teams to make sure that their code is not generating any adversarial samples other than skin tone manipulation in an effort to exploit adversarial vulnerability of these commercial gender recognition systems. After the skin tone manipulation, the original image and the generated image will not be $L_{\infty}$ consistent and hence it is difficult to check if there is added adversarial attack on the generated images.
+    \item For the gender recognition challenge track, organizers will run the classification code submitted by participants on the 1000 images and score them against their labels. 
+\end{itemize}
+
+
+In this final round, the protocol for each track is as follows. 
+
+\begin{enumerate}
+    \item For both tracks of the competition, participants are required to submit their code by the competition deadline.
+    \item Organizers will run the source code on the 1000 final round test images and generate manipulated images and evaluate the three commercial systems with them in the case of the first track. For the second track, organizers will run the code and generate gender predictions and score them against the ground truth gender labels.
+    \item Organizers determine the top 3 teams in each track. 
+    \item For the first track, the top 3 submissions are selected based on performance metrics for each vendor and average lowest performance metric for each of the two demographic groups (i. e., dark skin type male and dark skin type female).
+    \item The top three teams source code will be carefully examined to make sure adversarial attacks are not injected together with the skin tone manipulation.
+    \item For the second track, the top 3 teams are selected based on the highest balanced performance metrics for all the four demographic groups.
+    \item Organizers will announce the results and release the final round 1000 test images and their labels. Organizers will combine the new 1000 test images with the original PPB dataset so that further research and commercial systems will use this as evaluation benchmark test sets for gender and race balanced facial analysis.
+\end{enumerate}
+
 
 \subsection{Rules}
 
@@ -159,7 +203,7 @@ The proposed competition schedule is as follows.
 
 {\it June 30th, 2018} {\bf Release of development kit and official start of the competition}: The competition starts with the release of the development kit. 
 
-{\it June 30th, 2018 - October 1st, 2018} {\bf Duration of the competition}: Submissions are allowed starting this date until the competition closes for a maximum of 5 preliminary round of submission by each team for each track. 
+{\it June 30th, 2018 - October 1st, 2018} {\bf Duration of the competition}: Submissions are allowed starting this date until the competition closes for a maximum of 5 preliminary round of submission by each team for each track.
 
 {\it October 1st, 2018} {\bf Deadline for the final round}: Each team will have one more final round submission which is due on October 1st, 2018.
 
