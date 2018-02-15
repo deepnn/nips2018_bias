@@ -52,10 +52,10 @@ classification are covered in this competition.
 A recent study on effect of demographics on facial gender classification
 showed this bias on three commercially available gender classification systems
 \cite{buolamwini2018gender}. As part of eliciting these biases, a new dataset
-was collected that is balanced in gender and skin tone type called the Pilot
+was collected that is balanced by gender and skin tone type called the Pilot
 Parliaments Benchmark (PPB). Although there are many publicly available face
-datasets that have race, gender, age,and other face-based attributes, we will
-primarily use this benchmark dataset for evaluation (as test set) in this
+datasets that have race, gender, age, and other face-based attributes, we will
+primarily use this benchmark dataset for evaluation (as the test set) in this
 competition as attempts were made to balance the dataset based on demographic
 groups. This pilot analysis showed that three commercial face-based gender
 recognition systems by Microsoft, Face++, and IBM resulted in error rates of
@@ -67,10 +67,10 @@ benchmark were light skinned males\cite{buolamwini2018gender}.
 % Methods and available baseline for each track
 The competition will have two separate tracks. In the first track, researchers
 will be generating samples from existing datasets to illustrate such racial and
-gender biases in existing facial attributes analysis commercial systems and
-methods. In the second track, we will provide imbalanced dataset for race and
-gender and researchers will submit solutions that learn the facial attribute
-while minimizing the gender and racial bias in the classification performance.
+gender biases in existing commercial systems and
+methods for analyzing facial attributes. In the second track, we will provide a dataset that is not balanced by race and
+gender, and researchers will submit solutions that learn facial attributes
+while minimizing disparities by race and gender in the classification performance.
 We chose gender classification for two reasons. First, the original PPB dataset
 and pilot audit of the commercial systems is done on gender recognition and it
 will be easier for comparisons of the results coming out of this competition
@@ -78,7 +78,7 @@ with the pilot study. Secondly, gender recognition involves recognition of
 several facial attributes such as facial shape, hair style and certain facial
 features and hence gender recognition implicitly is comprehensive.
 
-{\bf Contributions}: The two tracks of this competition has the potential to 
+{\bf Contributions}: The two tracks of this competition have the potential to 
 spur new research lines or new application of existing methodology in 
 alleviating unintended algorithmic bias due to imbalanced datasets specifically 
 for face-based gender and other attributes recognition. 
