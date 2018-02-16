@@ -90,8 +90,9 @@ was collected that is balanced by gender and skin tone type called the Pilot
 Parliaments Benchmark (PPB). Although there are many publicly available face
 datasets that have race, gender, age, and other face-based attributes, we will
 primarily use this benchmark dataset for evaluation (as the test set) in this
-competition as attempts were made to balance the dataset based on demographic
-groups. This pilot analysis showed that three commercial face-based gender
+competition as attempts were made to balance the dataset based on four 
+demographic groups. This pilot analysis showed that three commercial face-based 
+gender
 recognition systems by Microsoft, Face++, and IBM resulted in error rates of
 23.8\%, 36.0\%, and 31.1\%, respectively, in dark skin type female samples from
 the PPB dataset. In contrast, the three systems had an average error rate of
@@ -101,16 +102,17 @@ benchmark were light skinned males\cite{buolamwini2018gender}.
 % Methods and available baseline for each track
 The competition will have two separate tracks. In the first track, researchers
 will be generating samples from existing datasets to illustrate such racial and
-gender biases in existing commercial systems and
-methods for analyzing facial attributes. In the second track, we will provide a dataset that is not balanced by race and
-gender, and researchers will submit solutions that learn facial attributes
-while minimizing disparities by race and gender in the classification performance.
-We chose gender classification for two reasons. First, the original PPB dataset
-and pilot audit of the commercial systems is done on gender recognition and it
-will be easier for comparisons of the results coming out of this competition
-with the pilot study. Secondly, gender recognition involves recognition of
-several facial attributes such as facial shape, hair style and certain facial
-features and hence gender recognition implicitly is comprehensive.
+gender biases in existing commercial systems and methods for analyzing facial 
+attributes. In the second track, we will provide a dataset that is not balanced 
+by race and gender, and researchers will submit solutions that learn facial 
+attributes while minimizing disparities by race and gender in the 
+classification performance. We chose gender classification for two reasons. 
+First, the original PPB dataset and pilot audit of the commercial systems is 
+done on gender recognition and it will be easier for comparisons of the results 
+coming out of this competition with the pilot study. Secondly, gender 
+recognition involves recognition of several facial attributes such as facial 
+shape, hair style and certain facial features and hence gender recognition 
+implicitly is comprehensive.
 
 {\bf Contributions}: The two tracks of this competition have the potential to 
 spur new research lines or new applications of existing methodology in 
@@ -152,8 +154,8 @@ attribute Analysis
 %key differences. O/w disregard)
 %Indicate whether this is a completely new competition, a competition part of a 
 %series, eventually re-using old data.
-To the best of our knowledge this will be the first time such a competition that 
-is targeted at eliciting racial and gender biases in face recognition and 
+To the best of our knowledge this will be the first time such a competition 
+that is targeted at eliciting racial and gender biases in face recognition and 
 analysis systems and attempting to solve these biases using techniques other 
 than simply balancing the training dataset. Balancing datasets for every 
 demographic group and gender is usually impractical for commercial applications 
@@ -250,15 +252,16 @@ evaluation set for the preliminary rounds of the competition. The dataset is
 composed of 1270 identities (1 image/subject) from 3 African (Rwanda, Senegal, 
 and South Africa) and 3 European countries'(Iceland, Finland, Sweden) national 
 parliaments. These countries were chosen by their ranking on percentage of 
-women representation in their national parliaments. Fig. \ref{fig_ppb} shows 
+women representation in their national parliaments. Fig. \ref{fig:fig_ppb} 
+shows 
 representative samples and average images from each country and gender. Table 
 \ref{ppb} summarizes the PPB dataset statistics compared to recent face 
 recognition benchmarks.
 
 \begin{figure}[t]
-    \label{fig_ppb}
     \centering
     \includegraphics[width=140mm]{fig/ppb}
+    \label{fig:fig_ppb}
     \caption{Sample images and average faces from each country and gender in 
     	the PPB dataset.}
 \end{figure}
@@ -324,11 +327,11 @@ In this track, each participant will be given 634 images from the PPB dataset
 as part of a development kit that also contains tools for cross validation, 
 pre-trained gender classifiers, links to the commercial face analysis 
 cloud-based tools and evaluation performance metrics. For each image in the 
-development package, each participant is expected to generate a new image that is 
-similar to the original image in identity. The only modification participants 
-are allowed to make to the input images is to manipulate the skin tone of the 
-subject in the image using any face morphing or feature-level facial attribute 
-manipulation models.
+development package, each participant is expected to generate a new image that 
+is similar to the original image in identity. The only modification 
+participants are allowed to make to the input images is to manipulate the skin 
+tone of the subject in the image using any face morphing or feature-level 
+facial attribute manipulation models.
 
 The final performance in this challenge will be evaluated with a separate test 
 set of images from parliamentarians from other countries to minimize 
@@ -341,9 +344,9 @@ as described in the metrics section will be winners.
 This second task is aimed at training gender recognition models with an 
 unconstrained non-balanced realistic dataset producing a balanced performance 
 in each of the four course demographic categories. For this purpose, each 
-participant will be required to train a model (or ensemble of models) on the CelebA 
-dataset. Participants are allowed to use all 39 attribute labels as long as 
-it helps improve the gender classification. For instance, they could use the 
+participant will be required to train a model (or ensemble of models) on the 
+CelebA dataset. Participants are allowed to use all 39 attribute labels as long 
+as it helps improve the gender classification. For instance, they could use the 
 "Pale\_skin" attribute to categorize the images based on skin lightness and use 
 sample weights during training. Participants are allowed to employ any 
 architecture, training technique, data augmentation (no external dataset is 
@@ -367,17 +370,17 @@ first three top position.
 %at hand. It should be possible to evaluate the results
 %objectively. If no metrics are used, explain how the evaluation
 %will be carried out.
-We will use the metrics of mean accuracy (see Eqn. \ref{eqn:ma}) and F1 score (see 
-Eqn. \ref{eqn:f1}) as the main evaluation metrics for this competition. Mean 
-accuracy is more informative than the regular accuracy (or error) metric on the 
-balance of accuracy in both gender classes (i.e. male and 
+We will use the metrics of mean accuracy (see Eqn. \ref{eqn:ma}) and F1 score 
+(see Eqn. \ref{eqn:f1}) as the main evaluation metrics for this competition. 
+Mean accuracy is more informative than the regular accuracy (or error) metric 
+on the balance of accuracy in both gender classes (i.e. male and 
 female). F1 score balances the precision (see Eqn. \ref{eqn:prec}) and recall 
 (see Eqn. \ref{eqn:rec}) and hence could serve as a more balanced performance 
 metric than solely precision or recall.
 
 \begin{equation}
 \label{eqn:ma}
-mA =   \frac{|TP|}{|P|} + \frac{|TN|}{|N|}
+mA =   \frac{1}{2}(\frac{|TP|}{|P|} + \frac{|TN|}{|N|})
 \end{equation}
 
 where $TP$ and $TN$ are the true positive and true negatives over total 
@@ -403,15 +406,16 @@ the set cardinality.
 
 For the first vendor evaluation track of the competition, we will re-score the 
 updated vendors' systems in terms of F1 score (see Eqn. \ref{eqn:f1}) using the 
-original PPB dataset for the four demographic groups (darker skinned female, darker 
-skinned male, lighter skinned female, and lighter skinned male) and will average the F1 
-scores as baseline. Images will be generated by running the source code of each 
-submission on the evaluation set.  The evaluation set will be used as testing 
-benchmark to score the three vendor systems (Microsoft, IBM and Face++).  This 
-will be evaluated on each of the four demographic groups using both mean 
-accuracy and F1 score, the lowest average F1 score across the three vendors and 
-the four demographic groups will determine the winners. If there is close to a 
-tie on the average F1 score, mean accuracy will be used to separate the teams.
+original PPB dataset for the four demographic groups (darker skinned female, 
+darker skinned male, lighter skinned female, and lighter skinned male) and will 
+average the F1 scores as baseline. Images will be generated by running the 
+source code of each submission on the evaluation set.  The evaluation set will 
+be used as testing benchmark to score the three vendor systems (Microsoft, IBM 
+and Face++).  This will be evaluated on each of the four demographic groups 
+using both mean accuracy and F1 score, the lowest average F1 score across the 
+three vendors and the four demographic groups will determine the winners. If 
+there is close to a tie on the average F1 score, mean accuracy will be used to 
+separate the teams.
 
 For the second balanced gender recognition challenge, we will generate 4 F1 
 scores for the four demographic groups for each submission on the sequestered 
@@ -441,14 +445,14 @@ Section \ref{sec:metrics}), and the baseline results.
 For the commercial vendors audit section, the baseline will be the preliminary 
 results presented in \cite{buolamwini2018gender}. After this preliminary study 
 two of the evaluated vendors (Microsoft and IBM) updated their gender 
-recognition systems for better performance in the darker skinned female category. We 
-will evaluate the new systems and update the baselines when we release the 
-development kit.
+recognition systems for better performance in the darker skinned female 
+category. We will evaluate the new systems and update the baselines when we 
+release the development kit.
 
 For the balanced gender classification task, our baseline model is ResNet50 
 pre-trained on ImageNet and fine-tuned on CelebA for gender recognition as part 
-of the development kit. We will train the model, evaluate it on the PPB based on 
-the split explained in the Protocol section (see Section \ref{sec:protocol}) 
+of the development kit. We will train the model, evaluate it on the PPB based 
+on the split explained in the Protocol section (see Section \ref{sec:protocol}) 
 and release the results as the baseline benchmark within the development kit. 
 We will also release a pytorch-based code for training such a model on the 
 CelebA dataset for gender recognition.
@@ -664,7 +668,7 @@ This competition will be promoted using the organizers' Facebook, Twitter,
 Reddit and other social media accounts and pages, and mailing lists. Moreover, 
 we encourage Black professionals in AI to take part in this competition. To 
 this effect, we will heavily promote it in the Black in AI Facebook group and 
-discussion forums and we wish winners of both tracks to present in the next 
+discussion forums and we wish winners of both tracks to present in the $2^{nd}$ 
 Black in AI workshop which will be co-located with NIPS 2018.
 
 \subsection{Organizing team}
@@ -704,7 +708,7 @@ Intelligence Laboratory, studying computer vision under Fei-Fei Li. Timnit has
 extensive experience assembling datasets and co-authored 
 \cite{buolamwini2018gender} which will be the main reference for the 
 competition. Timnit has co-organized many workshops (including the upcoming 
-workshop on Fairness Acccountability, Transparency and Ethics in Machine 
+workshop on Fairness, Acccountability, Transparency and Ethics in Machine 
 Learning at ICML) and is in the steering committee for the first conference on 
 the topic (FAT*). She will serve as an advisor for the challenge and help 
 review submissions.
