@@ -1,0 +1,26 @@
+Despite recent success in face recognition and facial attributes analysis,
+research suggests the existence of a wide range of unintentional biases
+towards a specific racial or gender group. Facial analysis is increasingly
+becoming pervasive in our daily lives for various applications such as
+face-based verification, identification, watch-list surveillance and
+criminal suspect profiling.  These biases have significant ramifications as
+these automated facial analysis systems are widely adopted by law enforcement
+and other critical areas such as healthcare. Most common facial attributes in
+automated facial analysis include gender, race, and age. Face-based Gender
+classification and its accuracy analysis based on four major demographic
+groups are covered in this competition. A recent study on effect of
+demographics on facial gender classification showed this bias on three
+commercially (Microsoft, Face++, and IBM) available gender classification
+systems. As part of eliciting these biases, a new dataset was collected that is
+balanced by gender and skin tone type called the Pilot Parliaments Benchmark
+(PPB). This pilot analysis showed that three commercial face-based gender
+recognition systems by Microsoft, Face++, and IBM resulted in error rates of
+23.8%, 36.0%, and 31.1%, respectively, in dark skin type female samples from
+the PPB dataset. In contrast, the three systems had an average error rate of
+0.53% for light skinned color males despite the fact that only 30.3% of the
+benchmark were light skinned males. This competition expands this study with
+two tracks. The first track will further extend and examine the bias in the
+commercial vendors challenge by generating new additional images from the PPB
+dataset while the second track seeks solutions that could lead to balanced
+performance with respect to the demographic groups from unconstrained publicly
+available face-based attributes dataset, CelebA, for gender recognition.

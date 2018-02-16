@@ -1,4 +1,6 @@
 \documentclass[11pt, oneside]{article}
+\pdfpagewidth=8.5in
+\pdfpageheight=11in
 %\usepackage{ijcai18}
 %\usepackage{apacite}
 \usepackage{geometry}
@@ -12,10 +14,7 @@
  as a function of skin type}
 \author{Esube Bekele\thanks{The Leader organizer should be the first author of
 		 the proposal.} \and Joy Buolamwini \and Timnit Gebru \and Wallace
-	 Lawson
-    %\and Ian Goodfellow
-    %\and Samy Bengio
-    \\
+	 Lawson \\
 {\tt esube.bekele.ctr@nrl.navy.mil}\\
 }
 \date{\today}
@@ -30,6 +29,38 @@
 \begin{document}
 \maketitle
 
+%\begin{abstract}
+%Despite recent success in face recognition and facial attributes analysis,
+%research suggests the existence of a wide range of unintentional biases 
+%towards a specific racial or gender group. Facial analysis is increasingly 
+%becoming pervasive in our daily lives for various applications such as 
+%face-based verification, identification, watch-list surveillance and 
+%criminal suspect profiling.  These biases have significant ramifications as 
+%these automated facial analysis systems are widely adopted by law enforcement 
+%and other critical areas such as healthcare. Most common facial attributes in 
+%automated facial analysis include gender, race, and age. Face-based Gender 
+%classification and its accuracy analysis based on four major demographic 
+%groups 
+%are covered in this competition. A recent study on effect of demographics on 
+%facial gender classification showed this bias on three commercially 
+%(Microsoft, 
+%Face++, and IBM) available gender classification systems. As part of eliciting 
+%these biases, a new dataset was collected that is balanced by gender and skin 
+%tone type called the Pilot Parliaments Benchmark (PPB). This pilot analysis 
+%showed that three commercial face-based gender recognition systems by 
+%Microsoft, Face++, and IBM resulted in error rates of 23.8\%, 36.0\%, and 
+%31.1\%, respectively, in dark skin type female samples from the PPB dataset. 
+%In 
+%contrast, the three systems had an average error rate of 0.53\% for light 
+%skinned color males despite the fact that only 30.3\% of the benchmark were 
+%light skinned males. This competition expands this study with two tracks. The 
+%first track will further extend and examine the bias in the commercial vendors 
+%challenge by generating new additional images from the PPB dataset while the 
+%second track seeks solutions that could lead to balanced performance with 
+%respect to the demographic groups from unconstrained publicly available 
+%face-based attributes dataset, CelebA, for gender recognition.
+%\end{abstract}
+
 \subsection{Overview of the competition}
 % Summarize the background, available data, methods, available baseline,
 % potential impact.
@@ -39,14 +70,15 @@ Despite recent success in face recognition and facial attributes analysis,
 research suggests the existence of a wide range of unintentional biases towards
 a specific racial or gender group \cite{phillips2011other} \cite{klare2012face}.
 Facial analysis is increasingly becoming pervasive in our daily lives for
-various applications such as face-based verification, identification, and
-criminal suspect profiling.  These biases have significant ramifications as
-these automated facial recognition and facial attributes analysis systems are
-widely adopted by law enforcement and other critical areas such as healthcare.
-Most common facial attributes in automated facial analysis include gender,
-race, and age \cite{fu2014learning} \cite{ng2015review}
-\cite{han2015demographic}. Face-based Gender and facial skin tone
-classification are covered in this competition.
+various applications such as face-based verification, identification, 
+watch-list surveillance and criminal suspect profiling.  These biases have 
+significant ramifications as these automated facial recognition and facial 
+attributes analysis systems are widely adopted by law enforcement and other 
+critical areas such as healthcare. Most common facial attributes in automated 
+facial analysis include gender, race, and age \cite{fu2014learning} 
+\cite{ng2015review} \cite{han2015demographic}. Face-based Gender classification 
+and its accuracy analysis based on four major demographic groups are covered in 
+this competition.
 
 % Availbale data review
 A recent study on effect of demographics on facial gender classification
@@ -150,9 +182,9 @@ train such systems \cite{phillips2011other}. As shown in the Face Recognition
 Vendor Test (FRVT) by the National Institute of Standards and Technologies 
 (NIST) evaluated every four years, the performance of automated facial analysis 
 has been steadily improving \cite{grother2010report}. The first breakdown of 
-facial analysis systems performance by demographic groups 
-\cite{phillips2011other} showed, however, that this performance improvement is 
-not uniform across demographic groups of race and gender.
+facial analysis systems performance by demographic groups showed, however, that 
+this performance improvement is not uniform across demographic groups of race 
+and gender \cite{phillips2011other}.
 
 % Extended impact
 With the wide spread adoption of automated facial analysis systems by law 
@@ -173,11 +205,11 @@ both find the source of such biases in facial analysis systems and solutions.
 
 % About the competition and relevant experience by authors
 It is important to pinpoint whether such biases are primarily due to skin tone 
-(race or ethnicity) and gender or whether these systems are exploiting other background 
-information such as clothing and visible attributes that correlate with 
-specific demographic groups. It is also important to solve this bias in facial 
-analysis systems in the presence of an imbalanced training dataset. Therefore, 
-this competition has two tracks that correspond to these two tasks.
+(race or ethnicity) and gender or whether these systems are exploiting other 
+background information such as clothing and visible attributes that correlate 
+with specific demographic groups. It is also important to solve this bias in 
+facial analysis systems in the presence of an imbalanced training dataset. 
+Therefore, this competition has two tracks that correspond to these two tasks.
 
 The first track requires participants to use the PPB dataset to generate 
 samples that elucidate the source of such biases in commercial face recognition 
@@ -209,16 +241,17 @@ dataset.
 %been kept confidential.
 
 Demographic imbalances in existing face-based gender recognition datasets led 
-to the creation of a new dataset for gender classification as an evaluation benchmark 
-called the Pilot Parliaments Benchmark (PPB) \cite{buolamwini2018gender}. This 
-dataset will be primarily used as an evaluation set for the preliminary rounds 
-of the competition. The dataset is composed of 1270 identities (1 
-image/subject) from 3 African (Rwanda, Senegal, and South Africa) and 3 
-European countries'(Iceland, Finland, Sweden) national parliaments. These 
-countries were chosen by their ranking on percentage of women representation in 
-their national parliaments. Fig. \ref{fig_ppb} shows representative samples and 
-average images from each country and gender. Table \ref{ppb} summarizes the PPB 
-dataset statistics compared to recent face recognition benchmarks.
+to the creation of a new dataset for gender classification as an evaluation 
+benchmark  called the Pilot Parliaments Benchmark (PPB) 
+\cite{buolamwini2018gender}. This dataset will be primarily used as an 
+evaluation set for the preliminary rounds of the competition. The dataset is 
+composed of 1270 identities (1 image/subject) from 3 African (Rwanda, Senegal, 
+and South Africa) and 3 European countries'(Iceland, Finland, Sweden) national 
+parliaments. These countries were chosen by their ranking on percentage of 
+women representation in their national parliaments. Fig. \ref{fig_ppb} shows 
+representative samples and average images from each country and gender. Table 
+\ref{ppb} summarizes the PPB dataset statistics compared to recent face 
+recognition benchmarks.
 
 \begin{figure}[t]
     \label{fig_ppb}
@@ -232,13 +265,13 @@ dataset statistics compared to recent face recognition benchmarks.
 
 The major defining characteristics of facial analysis and recognition benchmark 
 datasets is their imbalance with respect to racial/ethnic and gender 
-demographic groups \cite{phillips2011other, han2015demographic}. In the PPB 
-dataset, intentional effort was made to balance among these demographic groups 
-to allow a balanced evaluation of facial analysis algorithms (see Table 
-\ref{skin_ton}). The countries included in the dataset were selected because 
-they were among the top 10 countries when ranked by the percentage of women in their national parliaments. This balance in the test dataset 
-(PPB) sets equivalence across the demographic groups in all the metrics 
-evaluated.
+demographic groups. In the PPB  dataset, intentional effort was made to balance 
+among these demographic groups to allow a balanced evaluation of facial 
+analysis algorithms (see Table \ref{skin_ton}). The countries included in the 
+dataset were selected because they were among the top 10 countries when ranked 
+by the percentage of women in their national parliaments. This balance in the 
+test dataset (PPB) sets equivalence across the demographic groups in all the 
+metrics evaluated.
 
 \input{skinton}
 
@@ -640,29 +673,46 @@ Black in AI workshop which will be co-located with NIPS 2018.
 %providers, beta testers, and evaluators.
 {\bf Esube Bekele}: is a National Research Council Fellow at the US Naval
 Research Lab (NRL) in the Navy Center for Applied Research in Artificial
-Intelligence (NCARAI). Esube has extensive experience in data science kind of
-competitions and he currently serves in the organizing team od DC Data Science
-(Large meetup for data science professions in the Washington, DC area).
-Currently, he holds a master rank at kaggle.com. Esube will serve as the
-primary coordinator of the competition providing data, development kit,
-platform administration, baseline methods and evaluation performance
+Intelligence (NCARAI). His current research focuses on facial and full-body 
+attributes recognition and pedestrian re-identification for softbiometrics 
+\cite{bekele2017multi}. Esube has extensive experience in data science kind of 
+competitions and he currently serves in the organizing team od DC Data Science 
+(Large meetup for data science professions in the Washington, DC area). 
+Currently, he holds a master rank at kaggle.com. Esube will serve as the 
+primary coordinator of the competition providing data, development kit, 
+platform administration, baseline methods and evaluation performance 
 metrics--all with in the scope of his regular work as fellow at NRL.
 
-{\bf Joy Buolamwini}:
+{\bf Joy Buolamwini}: founded the Algorithmic Justice League to 
+fight bias in Machine Learning. She researches social impact technology at the 
+MIT Media Lab. Joy is a Rhodes Scholar, a Fulbright Fellow, an Astronaut 
+Scholar, a Google Anita Borg Scholar, and speaker giving talks at TEDx, the 
+White House, and the Vatican. As an entrepreneur, she co-founded Techturized 
+Inc - a hair-care technology company and advises Bloomer Tech - a smart 
+clothing startup transforming women’s health. She was the first author of the 
+gender classification commercial systems audit \cite{buolamwini2018gender} that 
+is the basis for this competition. More about this initial study can be found 
+at: gendershades.org. In this competition, she will serve in a supervisory role.
 
-{\bf Timnit Gebru}: is a postdoctoral researcher in the Fairness Accountability Transparency and Ethics (FATE) group at Microsoft Research. Prior to joining Microsoft Research, she was a PhD student in the Stanford Artificial Intelligence Laboratory, studying computer vision under Fei-Fei Li. Timnit has extensive experience assembling datasets and co-authored~\cite{buolamwini2018gender} which will be the main reference for the competition. Timnit has co-organized many workshops (including the upcoming workshop on Fairness Acccountability, Transparency and Ethics in Machine Learning at ICML) and is in the steering committee for the first conference on the topic (FAT*). She will serve as an advisor for the challenge and help review submissions.
+{\bf Timnit Gebru}: is a postdoctoral researcher in the Fairness Accountability 
+Transparency and Ethics (FATE) group at Microsoft Research. Prior to joining 
+Microsoft Research, she was a PhD student in the Stanford Artificial 
+Intelligence Laboratory, studying computer vision under Fei-Fei Li. Timnit has 
+extensive experience assembling datasets and co-authored 
+\cite{buolamwini2018gender} which will be the main reference for the 
+competition. Timnit has co-organized many workshops (including the upcoming 
+workshop on Fairness Acccountability, Transparency and Ethics in Machine 
+Learning at ICML) and is in the steering committee for the first conference on 
+the topic (FAT*). She will serve as an advisor for the challenge and help 
+review submissions.
 
 {\bf Wallace Lawson}: is a Research Scientist at the US Naval Ressearch Lab
 (NRL) in the Navy Center for Applied Research in Artificial Intelligence
-(NCARAI).  He has research and published extensively on facial analysis,a
-including image morphing, open-set face recognition and attributes prediction.
-Wallace will serve as an evaluator and will review submissions to the
-competition. As mentor to Esube at NRL, Wallace also will oversee the
-competition progress and will serve as an advisor.
-
-%{Ian Goodfellow}:
-
-%{Samy Bengio}:
+(NCARAI).  He has researched and published extensively on facial analysis
+including image morphing, open-set face recognition and attributes prediction 
+\cite{kamgar2011toward}. Wallace will serve as an evaluator and will review 
+submissions to the competition. As mentor to Esube at NRL, Wallace also will 
+oversee the competition progress and will serve as an advisor.
 
 \section{Resources}
 \subsection{Existing resources, including prizes}
@@ -672,8 +722,8 @@ competition progress and will serve as an advisor.
 We hope to host the competition at kaggle.com similar to last year's NIPS
 competition on adversarial examples. We do not plan to provide monetary prizes.
 However, top 3 submissions in each track will be invited to present in Black in
-AI workshop, which will be collocated with NIPS 2018 and this competition track
-of NIPS 2018.
+AI workshop, which will be collocated with NIPS 2018 in addition to presenting 
+at this competition track of NIPS 2018.
 
 %% The file named.bst is a bibliography style file for BibTeX 0.99c
 
